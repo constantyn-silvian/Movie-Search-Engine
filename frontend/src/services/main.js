@@ -13,7 +13,11 @@ export const searchFavoriteMovies = async () => {
     for (let i = 1; i <= 5; i++) {
         const url = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${i}`;
         const data = await fetch(url, options).then(res => res.json());
-        allMovies.push(...data.results);
+        data.results.forEach(movie => {
+            if(!allMovies.includes(movie)){
+                allMovies.push(movie);
+            }
+        });
     }
     return allMovies;
 }
@@ -33,7 +37,7 @@ export const searchMovie = async (query) => {
         const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query.trim())}&include_adult=false&language=en-US&page=${i}`;
         const data = await fetch(url, options).then(res => res.json());
         data.results.map(movie => {
-            if (movie.poster_path != null && movie.poster_path != undefined) {
+            if (movie.poster_path && !allMovies.includes(movie)) {
                 allMovies.push(movie);
             }
         });

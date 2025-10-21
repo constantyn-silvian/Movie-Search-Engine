@@ -8,19 +8,18 @@ export default function Favorites() {
         setFavoriteMovies(Object.keys(localStorage));
     }, []);
 
-    useEffect(() => {
-        setFavoriteMovies(Object.keys(localStorage));
-    }, [localStorage.length])
-
     const handleContent = () => {
         let maxWidth = "1fr";
-        if(!favoriteMovies || favoriteMovies.length === 0) return <p className="text-lg">You don't have any favorites for the moment</p>
-        if(favoriteMovies.length < 4) {maxWidth = "400px";}
+        if (!favoriteMovies || favoriteMovies.length === 0) return <p className="text-lg">You don't have any favorites for the moment</p>
+        if (favoriteMovies.length < 4) { maxWidth = "400px"; }
         return (
-            <div className={`grid grid-cols-[repeat(auto-fit,minmax(250px,${maxWidth}))] gap-1 p-2`} >
-                    {favoriteMovies.map((movie_key) => (<MovieCard movie={JSON.parse(localStorage.getItem(movie_key))} source={"favorites"} key={movie_key} />))}
+            <div className={`grid gap-1 p-2`}
+                style={{
+                    gridTemplateColumns: `repeat(auto-fit, minmax(250px,${maxWidth}))`
+                }}>
+                {favoriteMovies.map((movie_key) => (<MovieCard movie={JSON.parse(localStorage.getItem(movie_key))} source={"favorites"} key={movie_key} />))}
             </div>
-        )   
+        )
     }
     return (
         <div>
