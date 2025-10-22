@@ -1,1 +1,1 @@
-export const api_key = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMTgwNmQwZWYzNTJmYzM5MWY3YmFlNDIxMGJlZDMwYSIsIm5iZiI6MTc2MDczNDkwOS44NzYsInN1YiI6IjY4ZjJhZWJkYTBmMWFlOThlOWIyMzRlMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Z2-6OMt4dIQMo8ao6pecyUcl-6CtdPUou3XTr2_L1hM";
+export const api_key = "Bearer ";
