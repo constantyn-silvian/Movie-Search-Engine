@@ -1,6 +1,6 @@
 # Movie Search Engine
 
-A search engine for finding various types of movies from the TMDb database, initially displaying some of the most popular movies. 
+A search engine for finding various types of movies from the TMDb database and adding them to the favorites page, initially displaying some of the most popular movies. 
 
 ## React + Vite
 
