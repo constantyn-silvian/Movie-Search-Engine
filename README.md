@@ -1,4 +1,8 @@
-# React + Vite
+# Movie Search Engine
+
+A search engine for finding various types of movies from the TMDb database, initially displaying some of the most popular movies. 
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
