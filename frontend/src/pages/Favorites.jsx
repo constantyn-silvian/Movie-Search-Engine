@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import MovieCard from "../components/movieCard";
+import MovieCard from "../components/MovieCard";
 
 export default function Favorites() {
     const [favoriteMovies, setFavoriteMovies] = useState([]);

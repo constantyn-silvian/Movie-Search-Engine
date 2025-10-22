@@ -1,6 +1,5 @@
 import { use, useEffect, useState } from "react"
-import MovieCard from "../components/movieCard"
-import { searchFavoriteMovies, searchMovie } from "../services/main";
+import MovieCard from "../components/MovieCard"
 
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -9,24 +8,14 @@ export default function Home() {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        searchFavoriteMovies().then(res => {
-            setMovies(res);
-            setLoading(false);
-        }).catch(err => {
-            console.log(err);
-        });
+        fetch("http://localhost:5000/searchPopularMovies").then(res => res.json()).then(data => { setMovies(data); setLoading(false);}).catch(err => console.log(err));
     }, [])
 
     const handleSearch = (e) => {
         e.preventDefault();
         if (searchQuery.trim() != "") {
             setLoading(true);
-            searchMovie(searchQuery.trim()).then(res => {
-                setMovies(res);
-                setLoading(false);
-            }).catch(err => {
-                console.log(err);
-            });
+            fetch(`http://localhost:5000/searchMovie?title=${encodeURIComponent(searchQuery.trim())}`).then(res => res.json()).then(res => {setMovies(res), setLoading(false)}).catch(err => console.log(err));
         }
         setSearchQuery("");
     }
