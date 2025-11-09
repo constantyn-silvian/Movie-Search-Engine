@@ -43,7 +43,7 @@ export const searchMovie = async (query) => {
     }
     return allMovies;
 }
-
+ 
 app.get("/searchPopularMovies", (req, res) => {
     searchPopularMovies().then(data => res.json(data));
 })

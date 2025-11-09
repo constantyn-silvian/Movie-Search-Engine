@@ -7,8 +7,13 @@ export default function Home() {
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState([]);
 
-    useEffect(() => {
+    const setPopularMovies = () => {
+        setLoading(true);
         fetch("http://localhost:5000/searchPopularMovies").then(res => res.json()).then(data => { setMovies(data); setLoading(false);}).catch(err => console.log(err));
+    }
+
+    useEffect(() => {
+        setPopularMovies()
     }, [])
 
     const handleSearch = (e) => {
@@ -16,6 +21,9 @@ export default function Home() {
         if (searchQuery.trim() != "") {
             setLoading(true);
             fetch(`http://localhost:5000/searchMovie?title=${encodeURIComponent(searchQuery.trim())}`).then(res => res.json()).then(res => {setMovies(res), setLoading(false)}).catch(err => console.log(err));
+        }
+        else if(searchQuery.trim() === ""){
+            setPopularMovies();
         }
         setSearchQuery("");
     }
@@ -32,7 +40,7 @@ export default function Home() {
                 style={{
                     gridTemplateColumns: `repeat(auto-fit, minmax(250px,${maxWidth}))`
                 }}>
-                {movies.map((movie) => (<MovieCard movie={movie} source={"home"} key={movie.id} />))}
+                {movies.map((movie) => (<MovieCard movie={movie} key={movie.id} />))}
             </div>
         )
     }

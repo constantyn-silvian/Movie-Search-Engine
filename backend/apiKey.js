@@ -1,1 +1,1 @@
-export const api_key = "Bearer ";
+export const api_key = "Bearer "; // Paste API key after Bearer; Ex: Bearer 12345678

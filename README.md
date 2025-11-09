@@ -1,20 +1,52 @@
-# Movie Search Engine
+<div align="center">
+    <h1 align="center">Movie Search Engine</h1>
+    <p align="center">
+    A basic <b>Movie Search Engine</b> used to easily search your <b>favorite movies</b>
+    <br/>
+    <a href="https://github.com/constantyn-silvian/Movie-Search-Engine/issues/new?labels=bug&template=bug_raport.md">Report Bug</a>
+    &middot;
+    <a href="https://github.com/constantyn-silvian/Movie-Search-Engine/issues/new?labels=enhancement&template=feature_request.md">Request Feature</a>
+    &middot;
+    <a href="https://github.com/constantyn-silvian/Movie-Search-Engine/blob/main/CHANGELOG.md">Changelog</a>
+    </p>
+</div>
 
-A search engine for finding various types of movies from the TMDb database and adding them to the favorites page, initially displaying some of the most popular movies. 
+# About The Project
+A search engine for finding various types of movies from the TMDb database and adding them to the favorites page.
+The home page displays the current most popular movies so you can start planing to watch new films with ease. 
 
-## React + Vite
+## Demo
+#### Home Page
+![home_page](images/demo_img1.png)
+---
+#### Favorites Page
+![favorites_page](images/demo_img2.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installing and Setup
+### Install dependencies
+Node, NPM
+```sh
+npm install
+```
+### Setup API key
+https://developer.themoviedb.org/docs/getting-started  
+Follow the guide from the link above: create an account, log in and get your API key, then put the key in `backend\apiKey.js`.    
 
-Currently, two official plugins are available:
+### Running
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Run frontend
+```sh
+cd .\frontend\
+npm run dev
+```
 
-## React Compiler
+Run backend
+```sh
+cd .\backend\
+node .\index.js
+```
+## Credits
+* TMDB (The Movie Database) — a great guide that teaches you how to use the API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

@@ -1,6 +1,6 @@
 import { use, useEffect, useState } from "react";
 
-export default function MovieCard({ movie, source }) {
+export default function MovieCard({ movie}) {
     const [liked, setLiked] = useState(false);
 
     useEffect(() => {
@@ -25,8 +25,7 @@ export default function MovieCard({ movie, source }) {
                     <h3 >{movie.title}</h3>
                     <p >{movie.release_date}</p>
                 </div>
-                {(source == "home") && <button onClick={toggleLike}>{liked ? "❤︎" : "♡"}</button>}
-                {(source == "favorites") && <button >❤︎</button>}
+                <button onClick={toggleLike}>{liked ? "❤︎" : "♡"}</button>
             </div>
         </div>
     )

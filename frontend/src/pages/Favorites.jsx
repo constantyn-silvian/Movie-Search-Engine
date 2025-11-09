@@ -17,7 +17,7 @@ export default function Favorites() {
                 style={{
                     gridTemplateColumns: `repeat(auto-fit, minmax(250px,${maxWidth}))`
                 }}>
-                {favoriteMovies.map((movie_key) => (<MovieCard movie={JSON.parse(localStorage.getItem(movie_key))} source={"favorites"} key={movie_key} />))}
+                {favoriteMovies.map((movie_key) => (<MovieCard movie={JSON.parse(localStorage.getItem(movie_key))} key={movie_key} />))}
             </div>
         )
     }
