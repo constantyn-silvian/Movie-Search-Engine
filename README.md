@@ -3,9 +3,9 @@
     <p align="center">
     A basic <b>Movie Search Engine</b> used to easily search your <b>favorite movies</b>
     <br/>
-    <a href="https://github.com/constantyn-silvian/Movie-Search-Engine/issues/new?labels=bug&template=bug_raport.md">Report Bug</a>
+    <a href="https://github.com/constantyn-silvian/Movie-Search-Engine/issues/new?labels=bug&template=bug_report.md">Report Bug</a>
     &middot;
-    <a href="https://github.com/constantyn-silvian/Movie-Search-Engine/issues/new?labels=enhancement&template=feature_request.md">Request Feature</a>
+    <a href="https://github.com/constantyn-silvian/Movie-Search-Engine/issues/new?labels=enhancement&template=feature_report.md">Request Feature</a>
     &middot;
     <a href="https://github.com/constantyn-silvian/Movie-Search-Engine/blob/main/CHANGELOG.md">Changelog</a>
     </p>
