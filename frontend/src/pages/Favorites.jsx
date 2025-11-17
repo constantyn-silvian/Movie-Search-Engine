@@ -23,7 +23,7 @@ export default function Favorites() {
     }
     return (
         <div>
-            <h1 className="text-5xl text-red-600 font-black">Favorite Movies:</h1>
+            <h1 className="text-5xl text-shadow-2xl text-shadow-red-600 text-red-600 font-black selection:bg-red-600 selection:text-white">Favorite Movies:</h1>
             {handleContent()}
         </div>
     )
