@@ -51,7 +51,7 @@ export default function Home() {
                 <input
                     type='text'
                     placeholder="Search for movies"
-                    className="border-1 border-white hover:border-3 rounded-md p-2 text-lg outline-[0px]"
+                    className="border border-white hover:border-3 rounded-md p-2 text-lg outline-[0px]"
                     value={searchQuery}
                     onChange={(e) => {
                         setSearchQuery(e.target.value);
