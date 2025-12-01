@@ -46,7 +46,7 @@ cd .\backend\
 node .\index.js
 ```
 ## Credits
-* TMDB (The Movie Database) — a great guide that teaches you how to use the API
+* TMDB (The Movie Database) — it has a great and easy to read guide that teaches you how to use their API
 
 
 
