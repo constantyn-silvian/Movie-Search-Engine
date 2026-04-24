@@ -40,7 +40,7 @@ Users can create an account, log in, and save movies to a personal favorites pag
 ### Prerequisites
 
 - Node.js & NPM
-- PostgreSQL (running locally or remote)
+- PostgreSQL (running locally)
 
 ### Install dependencies
 
@@ -56,19 +56,26 @@ Follow the guide from the link above: create an account, log in and get your API
 
 ### Setup PostgreSQL
 
-1. Create a PostgreSQL database (e.g. `movie_search_db`)
-2. Fill in your credentials in `backend/.env`:
+Open **SQL Shell (psql)** as `postgres` and run the following commands:
 
-```env
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=movie_search_db
-DB_USER=your_postgres_user
-DB_PASSWORD=your_postgres_password
-JWT_SECRET=your_jwt_secret
+```sql
+CREATE DATABASE "movie-engine_db";
+CREATE USER "movie-engine" WITH PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE "movie-engine_db" TO "movie-engine";
+\c "movie-engine_db"
+GRANT ALL ON SCHEMA public TO "movie-engine";
 ```
 
-The database tables are initialized automatically via `backend/db.js` when the server starts.
+This only needs to be done once. The tables (`users`, `movies`) are created automatically when the backend starts.
+
+### Setup environment variables
+
+Create a `backend/.env` file and add your JWT secret:
+
+```env
+API_KEY = "Bearer {apiKey}"
+JWT_SECRET=your_jwt_secret
+```
 
 ### Running
 
